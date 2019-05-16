@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'houses/show'
+  root to: "home#index"
+
+  post "login", to: "house_sessions#create", as: "house_sessions"
+
+  resources :houses, only: [:show]
 end

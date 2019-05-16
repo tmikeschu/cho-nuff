@@ -1,0 +1,9 @@
+<h1>Cho-Nuff</h1>
+<p>Welcome to cho-nuff!</p>
+<p>Please enter your house's passphrase to view your chores</p>
+
+<%= form_for(:house, url: house_sessions_path) do |f| %>
+  <%= f.text_field :passphrase %>
+
+  <%= f.submit "cho me the money" %>
+<% end %>
