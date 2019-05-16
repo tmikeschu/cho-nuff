@@ -1,24 +1,49 @@
-# README
+# cho-nuff
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A handy app for assigning and managing shared household chores. Can your house
+work together to stay tidy? Cho-nuff!
 
-Things you may want to cover:
+![](https://media.giphy.com/media/3DnDRfZe2ubQc/giphy.gif)
 
-* Ruby version
+## Data
 
-* System dependencies
+A user has many houses
+A house has many rooms
+A room has many tasks
+A user has many user tasks that can be completed
 
-* Configuration
+## Setup
 
-* Database creation
+Fork and clone the repo:
 
-* Database initialization
+```shell
+git clone git@github.com:<YOUR_USERNAME>/cho-nuff.git
+```
 
-* How to run the test suite
+Get your deps, db set, and run them tests:
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+bundle install
+bin/rails db:{create,migrate}
+rspec
+```
 
-* Deployment instructions
+## Local Development
 
-* ...
+The one and only:
+
+```shell
+bin/rails server
+```
+
+To poke around with data:
+
+```shell
+bin/rails console
+```
+
+## Tools
+
+### `standard`
+
+Set up your editor to auto fix your code using the awesome gem [standard](https://github.com/testdouble/standard).
