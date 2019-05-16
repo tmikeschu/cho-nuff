@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :room do
-    house { nil }
-    name { "MyString" }
+    house
+    name { %w[yoga master kitchen bathroom].sample }
   end
 end
