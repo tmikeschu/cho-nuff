@@ -1,0 +1,13 @@
+<h1><%= @presenter.room_name %></h1>
+<h2>Tasks</h2>
+<ul>
+  <% @presenter.room_tasks_details.each do |task_details| %>
+    <li>
+      <ul>
+        <% task_details.each do |detail| %>
+          <li><%= "#{detail.fetch(:label)}: #{detail.fetch(:value)}" %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>

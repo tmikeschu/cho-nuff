@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| %>
+      <div <%= {:class => "Flash Flash--#{name}", :role => "alert"} %>>
+        <button <%= {"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"} %>>
+          <span <%= {"aria-hidden" => "true"} %>> ×</span>
+        </button>
+
+        <span>
+          Message: <%= sanitize(msg, tags: %w(a), attributes: %w(href rel data-method)) %>
+        </span>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

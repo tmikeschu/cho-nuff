@@ -5,7 +5,7 @@ RSpec.describe Task, type: :model do
     it { should belong_to(:room) }
     it { should have_many(:users).through(:users_tasks) }
     it {
-      should define_enum_for(:type)
+      should define_enum_for(:task_type)
         .with_values(%i[mop organize sweep trash vacuum wipe])
     }
     it {

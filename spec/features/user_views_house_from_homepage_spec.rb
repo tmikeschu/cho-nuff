@@ -11,4 +11,13 @@ RSpec.feature "UserViewsHouseFromHomepage", type: :feature do
 
     expect(current_path).to eq house_path(house)
   end
+
+  scenario "an incorrect code does not work" do
+    visit root_path
+    fill_in :house_passphrase, with: "WOMBAT"
+    click_button "cho me the money"
+
+    expect(page).to have_content "Invalid house passphrase"
+    expect(current_path).to eq root_path
+  end
 end

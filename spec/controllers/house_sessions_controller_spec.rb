@@ -1,12 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe HouseSessionsController, type: :controller do
+  let(:house) { create(:house) }
 
-  describe "GET #create" do
+  describe "POST #create" do
     it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
+      post :create, params: {house: {passphrase: house.passphrase}}
+      expect(response).to redirect_to(house_path(house))
     end
   end
-
 end

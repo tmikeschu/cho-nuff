@@ -1,0 +1,17 @@
+<h1>Create a Task</h1>
+
+<%= form_for([@presenter.house, @presenter.task]) do |f| %>
+  <%= f.label "Room" %>
+  <%= f.select(:room_id, @presenter.rooms, {include_blank: true}, required: true) %>
+
+  <%= f.label "Task Type" %>
+  <%= f.select(:task_type, @presenter.task_types, {include_blank: true}) %>
+
+  <%= f.label "Rag" %>
+  <%= f.select(:rag, @presenter.rags, {include_blank: true}) %>
+
+  <%= f.label "Description" %>
+  <%= f.text_area(:description) %>
+
+  <%= f.submit "Submit" %>
+<% end %>

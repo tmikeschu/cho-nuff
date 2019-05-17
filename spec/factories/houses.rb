@@ -1,6 +1,14 @@
 FactoryBot.define do
   factory :house do
     name { "1064" }
+    passphrase { "ONE WAY" }
+  end
+
+  trait :with_kitchen do
+    after(:create) do |house|
+      house.rooms << create(:room, house: house, name: "Kitchen")
+      house.save!
+    end
   end
 
   trait :with_rooms_and_tasks do
