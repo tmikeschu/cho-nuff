@@ -1,5 +1,6 @@
 class RoomPresenter
   DETAILS = {
+    name: "Name",
     description: "Description",
     task_type: "Type",
     rag: "Rag",

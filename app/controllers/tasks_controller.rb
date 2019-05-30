@@ -27,7 +27,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:room_id, :task_type, :rag, :description)
+    params.require(:task).permit(:room_id, :task_type, :rag, :description, :name)
   end
 
   def house

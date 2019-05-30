@@ -10,6 +10,9 @@
   <%= f.label "Rag" %>
   <%= f.select(:rag, @presenter.rags, {include_blank: true}) %>
 
+  <%= f.label "Name" %>
+  <%= f.text_area(:name) %>
+
   <%= f.label "Description" %>
   <%= f.text_area(:description) %>
 
