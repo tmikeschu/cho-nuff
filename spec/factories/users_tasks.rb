@@ -3,6 +3,6 @@ FactoryBot.define do
     task
     user
     completed { false }
-    week_of { Date.now.at_beginning_of_week }
+    week_of { Date.today.at_beginning_of_week }
   end
 end
