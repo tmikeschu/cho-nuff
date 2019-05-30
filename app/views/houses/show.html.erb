@@ -1,3 +1,17 @@
-<h1><%= @house.name %></h1>
+<h1><%= @presenter.house_name %></h1>
 
-<%= link_to "Add Task", new_house_task_path(@house) %>
+<h2>This Week's Tasks</h2>
+
+<ul>
+  <% @presenter.active_tasks.each do |task| %>
+    <li class="Task Task--<%= task.fetch(:id) %>">
+      <ul>
+        <% task.fetch(:details, []).each do |detail| %>
+          <li><%= detail.values_at(:label, :value).join(": ") %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add Task", new_house_task_path(@presenter.house_id) %>

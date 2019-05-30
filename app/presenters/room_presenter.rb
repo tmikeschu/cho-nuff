@@ -19,7 +19,12 @@ class RoomPresenter
 
   def room_tasks_details
     room.tasks.map { |task|
-      DETAILS.map { |message, label| {label: label, value: task.send(message)} }
+      DETAILS.map { |message, label|
+        {
+          label: label,
+          value: task.send(message),
+        }
+      }
     }
   end
 end

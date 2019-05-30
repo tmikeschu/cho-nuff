@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.feature "UserViewsHouseFromHomepage", type: :feature do
-  let!(:house) { create(:house, :with_rooms_and_tasks, passphrase: "WOOMIES") }
-  let(:user) { create(:user, houses: [house]) }
+  let!(:user) { create(:user, houses: [house]) }
+  let(:house) { create(:house, :with_rooms_and_tasks, passphrase: "WOOMIES") }
 
   scenario "they can view a house using their code" do
     visit root_path

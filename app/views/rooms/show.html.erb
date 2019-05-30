@@ -5,7 +5,7 @@
     <li>
       <ul>
         <% task_details.each do |detail| %>
-          <li><%= "#{detail.fetch(:label)}: #{detail.fetch(:value)}" %></li>
+          <li><%= detail.values_at(:label, :value).join(": ") %></li>
         <% end %>
       </ul>
     </li>
