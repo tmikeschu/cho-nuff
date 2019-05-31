@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'rooms/show'
-  get "houses/show"
   root to: "home#index"
 
   post "login", to: "house_sessions#create", as: "house_sessions"
@@ -8,5 +6,6 @@ Rails.application.routes.draw do
   resources :houses, only: [:show] do
     resources :tasks, only: [:new, :create]
     resources :rooms, only: [:show]
+    resources :users_tasks, only: [:update]
   end
 end
