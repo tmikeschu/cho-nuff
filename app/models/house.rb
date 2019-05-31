@@ -10,7 +10,7 @@ class House < ApplicationRecord
   end
 
   def assign_tasks!
-    if active_tasks.empty?
+    if users.present? && active_tasks.empty?
       user_ids, task_ids = [users, tasks].map { |assoc| assoc.pluck(:id) }
 
       task_ids.shuffle.reduce(user_ids) do |user_ids, task_id|

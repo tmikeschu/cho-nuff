@@ -1,11 +1,4 @@
 class HousePresenter
-  DETAILS = {
-    name: "Task",
-    description: "Instructions",
-    user_name: "Roomie",
-    completed: "Completed",
-  }
-
   attr_reader :house
 
   delegate :id, :name, to: :house, prefix: true
@@ -15,16 +8,6 @@ class HousePresenter
   end
 
   def active_tasks
-    house.active_tasks.map { |task|
-      {
-        id: task.id,
-        details: DETAILS.map { |message, label|
-          {
-            label: label,
-            value: task.send(message),
-          }
-        },
-      }
-    }
+    house.active_tasks.map { |task| UsersTaskPresenter.new(task: task) }
   end
 end
