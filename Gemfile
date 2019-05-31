@@ -25,6 +25,7 @@ end
 
 group :test do
   gem "capybara", ">= 2.15"
+  gem "poltergeist"
   gem "selenium-webdriver"
   gem "webdrivers", "~> 3.0"
   gem "rspec-rails", "~> 3.8"

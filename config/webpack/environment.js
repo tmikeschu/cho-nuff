@@ -1,3 +1,12 @@
-const { environment } = require('@rails/webpacker')
+const { environment } = require("@rails/webpacker");
+const path = require("path");
 
-module.exports = environment
+environment.config.merge({
+  resolve: {
+    alias: {
+      Utils: path.resolve(__dirname, "..", "..", "app/javascript/utils")
+    }
+  }
+});
+
+module.exports = environment;

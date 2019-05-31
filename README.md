@@ -20,6 +20,8 @@ Fork and clone the repo:
 git clone git@github.com:<YOUR_USERNAME>/cho-nuff.git
 ```
 
+First install [phantom.js](http://phantomjs.org/download.html).
+
 Get your deps, db set, and run them tests:
 
 ```shell
