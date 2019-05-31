@@ -23,6 +23,7 @@ git clone git@github.com:<YOUR_USERNAME>/cho-nuff.git
 Get your deps, db set, and run them tests:
 
 ```shell
+yarn install
 bundle install
 bin/rails db:{create,migrate}
 rspec
