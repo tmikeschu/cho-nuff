@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/tmikeschu/cho-nuff.svg?branch=master)](https://travis-ci.com/tmikeschu/cho-nuff)
+
 # cho-nuff
 
 A handy app for assigning and managing shared household chores. Can your house
@@ -7,10 +9,13 @@ work together to stay tidy? Cho-nuff!
 
 ## Data
 
-A user has many houses
-A house has many rooms
-A room has many tasks
-A user has many user tasks that can be completed
+- A user has many houses
+
+- A house has many rooms
+
+- A room has many tasks
+
+- A user has many user tasks that can be completed
 
 ## Setup
 
@@ -50,3 +55,5 @@ bin/rails console
 ### `standard`
 
 Set up your editor to auto fix your code using the awesome gem [standard](https://github.com/testdouble/standard).
+
+### [Travis CI](https://travis-ci.com)
