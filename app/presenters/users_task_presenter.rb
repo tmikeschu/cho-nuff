@@ -3,7 +3,6 @@ class UsersTaskPresenter
     name: "Task",
     description: "Instructions",
     user_name: "Roomie",
-    completed: "Completed",
   }
 
   delegate :id, :completed?, to: :task
@@ -23,12 +22,6 @@ class UsersTaskPresenter
   end
 
   def details
-    DETAILS.map { |message, label|
-      {
-        label: label,
-        value: task.send(message),
-        target: "info_#{message}".camelize(:lower),
-      }
-    }
+    DETAILS.map { |message, label| "#{label}: #{task.send(message)}" }
   end
 end

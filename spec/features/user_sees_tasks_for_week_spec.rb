@@ -13,7 +13,7 @@ RSpec.feature "UserSeesTasksForWeeks", type: :feature do
     house.active_tasks.each do |task|
       expect(task.user).to be_in users
 
-      within ".Task--#{task.id}" do
+      within ".UsersTask--#{task.id}" do
         expect(page).to have_content task.user.name
       end
     end

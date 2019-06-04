@@ -5,23 +5,27 @@
 <ul>
   <% @presenter.active_tasks.each do |task| %>
     <li
-      class="Task Task--<%= task.id %>"
+      class="UsersTask UsersTask--<%= task.id %>"
       data-controller="users-task"
       data-users-task-is-completed="<%= task.completed? %>"
       data-users-task-patch-url="<%= house_users_task_path(@presenter.house_id, task.id) %>"
       >
       <ul>
         <% task.details.each do |detail| %>
-          <li data-target="users-task.<%= detail.fetch(:target) %>"><%= detail.values_at(:label, :value).join(": ") %></li>
+          <li><%= detail %></li>
         <% end %>
+
+
+        <li>
+          <%= label_tag "users_task_completed", "Completed:" %>
+          <%= check_box_tag "users_task_completed", "", task.completed?, class: "UsersTask__completed", data: {
+            target: "users-task.completeCheckbox",
+            action: "change->users-task#completeTask"
+          } %>
+          <span data-target="users-task.error"></span>
+        </li>
       </ul>
 
-      <button
-        data-target="users-task.completeButton"
-        data-action="click->users-task#completeTask"
-        >
-      </button>
-      <span data-target="users-task.error"></span>
     </li>
   <% end %>
 </ul>
