@@ -109,7 +109,7 @@ GEM
       websocket-driver (>= 0.2.0)
     psych (3.1.0)
     public_suffix (3.0.3)
-    puma (3.12.1)
+    puma (3.12.4)
     rack (2.0.7)
     rack-proxy (0.6.5)
       rack
@@ -232,7 +232,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   poltergeist
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 5.2.3)
   rspec-rails (~> 3.8)
   selenium-webdriver
