@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "^4.0.6",
     "@stimulus/polyfills": "^1.1.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "core-js": "3",
     "rails-ujs": "^5.2.3",
